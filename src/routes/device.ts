@@ -25,8 +25,8 @@ router.route("/create")
 
   router.route("/delete/:id")  
   .delete(async (req: Request, res: Response) => {    
-    await Device.findOneAndDelete(req.params)   
-    res.send(`Eliminado`)
+    await Device.findOneAndDelete(req.params)    
+    res.send(`Delete`)
   })
 
   router.route("/edit/:id")  
