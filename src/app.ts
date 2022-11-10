@@ -6,6 +6,7 @@ import path from "path";
 //
 import indexRoutes from './routes';
 import deviceRoutes from './routes/device'
+import gatewayRoutes from './routes/gateway'
 
 class Applicattion {
   app: express.Application;
@@ -29,6 +30,7 @@ class Applicattion {
   routes() {
     this.app.use(indexRoutes);
     this.app.use('/device',deviceRoutes);
+    this.app.use('/gateway',gatewayRoutes);
   }
 
   start() {

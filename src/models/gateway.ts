@@ -1,37 +1,26 @@
 import { Schema, model} from 'mongoose';
 
-const DeviceShema = new Schema({
-    UID: { 
-        type: String,
-        require: true,
-        lowercase: true
-    },
-    provider: { 
-        type: String,
-        require: true,
-        lowercase: true
-    },
-    creation_date: { 
-        type: String,
-        require: true,
-        lowercase: true
-    },
-    gateway_id: { 
-        type: String,
-        require: true,
-        lowercase: true
-    },
-    status: { 
-        type: Boolean,
-        require: true    
-    },
+const GatewayShema = new Schema({
     id: { 
         type: String,
-        unique: true,
+        require: true,
+        lowercase: true
+    },
+    ip: { 
+        type: String,
+        require: true,
+        lowercase: true
+    },
+    name: { 
+        type: String,
+        require: true,
+        lowercase: true
+    },
+    serial: { 
+        type: String,
         require: true,
         lowercase: true
     }
-
 });
 
-export default model('Device', DeviceShema)
+export default model('Gateway', GatewayShema)
