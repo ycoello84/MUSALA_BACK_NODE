@@ -8,7 +8,7 @@ router.route("/create")
   })
   .post(async (req: Request, res: Response) => {
     const { id, ip, name, serial } = req.body;
-    const newGateway = new Gateway({  id, ip, name, serial  });
+    const newGateway = new Gateway({  id, ip, name, serial });
     console.log('Gateway: ', newGateway);
     await newGateway.save();
     res.send("Saved");

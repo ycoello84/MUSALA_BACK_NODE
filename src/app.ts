@@ -1,7 +1,8 @@
 import express from "express";
 import morgan from "morgan";
-import exphbs from 'express-handlebars';
+// import exphbs from 'express-handlebars';
 import path from "path";
+import cors from 'cors';
 
 //
 import indexRoutes from './routes';
@@ -19,6 +20,10 @@ class Applicattion {
 
   settings() {
     this.app.set("port", 3000);
+    this.app.use(cors({
+      origin: ['https://localhost:4200']
+    }))
+    this.app.use(express.urlencoded({ extended: false }));
     this.app.set('views', path.join(__dirname, 'views'));   
   }
 
